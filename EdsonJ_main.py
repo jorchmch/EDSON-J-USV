@@ -6,9 +6,6 @@ import mysql.connector
 from datetime import datetime
 
 
-
-
-
 #-------------------------------------------------------------------------#
 # Connecting Database MySql
 #-------------------------------------------------------------------------#
@@ -87,7 +84,7 @@ while(1):
 
 
 	#--------------------------------------------------------------------#
-	# Maniobras zigzag
+	# Automatic mode - zigzag maneuvers
 	#--------------------------------------------------------------------#
 	
 	elif key == "F\n": # ZZ 10
@@ -152,7 +149,7 @@ while(1):
 
 
 	#--------------------------------------------------------------------#
-	# Control H Infinito
+	# H infinity Control - Experimental Test
 	#--------------------------------------------------------------------#
 	
 	elif key == "Y\n": # K=0.5
@@ -206,7 +203,7 @@ while(1):
 	
 	#-------------------------------------------------------------------------#
 	# Insert Data Into Database
-    #-------------------------------------------------------------------------#
+    	#-------------------------------------------------------------------------#
 	#Return the current UTC date and time for each measure
 		
 	MeasureTime = datetime.utcnow()
@@ -226,5 +223,5 @@ while(1):
 	mydb.commit()
 	#print("1 record inserted, ID:", mycursor.lastrowid)
 	
-	time.sleep(0.01) # cada 50 Hz (modificable)
+	time.sleep(0.02) # 50 Hz (modificable)
 	#time.sleep(0.1) # cada 10 Hz (modificable)
